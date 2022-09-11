@@ -1,0 +1,54 @@
+@import '../../common/styles/colors';
+@import '../../common/styles/templates';
+
+.search {
+  position: relative;
+
+  input {
+    border: 1px solid $colorBorder-black;
+    padding: 15px;
+    border-radius: 15px;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 50px;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    opacity: 0.3;
+  }
+}
+
+.usersList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  height: calc(100% - 130px);
+  margin-top: 30px;
+}
+
+.skeletonList {
+  height: calc(100% - 130px);
+  margin-top: 30px;
+
+  svg {
+    margin-bottom: 15px;
+  }
+}
+
+.sendInviteBtn {
+  @extend %sendInviteBtn;
+
+  &:hover {
+    @extend %sendInviteBtnHover;
+  }
+
+  &:active {
+    @extend %sendInviteBtnActive
+  }
+}
