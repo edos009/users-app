@@ -1,14 +1,22 @@
-import React from 'react';
+import React from "react";
+import { useSelector } from "react-redux";
 
 import styles from "./Success.module.scss";
 
-const Success = ({count}) => {
+const Success = () => {
+  const { invitedUsers } = useSelector((state) => state.users);
+
   return (
     <div className={styles.successBlock}>
       <img src="/assets/success.svg" alt="Success" />
       <h3>Успешно!</h3>
-      <p>Всем {count} пользователям отправлено приглашение.</p>
-      <button className={styles.sendInviteBtn}>Назад</button>
+      <p>Всем {invitedUsers.length} пользователям отправлено приглашение.</p>
+      <button
+        className={styles.sendInviteBtn}
+        onClick={() => window.location.reload()}
+      >
+        Назад
+      </button>
     </div>
   );
 };
